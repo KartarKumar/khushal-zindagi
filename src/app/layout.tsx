@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
-import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
+import ClientLayout from "@/components/layout/ClientLayout";
 
 const font = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -36,12 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${font.variable} h-full`} data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col font-sans antialiased">
-        <AnnouncementBar />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileBottomBar />
-        <WhatsAppFloat />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
